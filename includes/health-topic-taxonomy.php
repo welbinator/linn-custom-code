@@ -195,20 +195,6 @@ add_action( 'health_topic_add_form_fields', function() {
     <?php
 } );
 
-// Add image field to Edit screen
-add_action( 'health_topic_edit_form_fields', function( $term ) {
-    $image = get_term_meta( $term->term_id, 'health_topic_image', true );
-    ?>
-    <tr class="form-field term-group-wrap">
-        <th scope="row"><label for="health_topic_image"><?php _e( 'Image', 'textdomain' ); ?></label></th>
-        <td>
-            <input type="text" id="health_topic_image" name="health_topic_image" value="<?php echo esc_attr( $image ); ?>" class="regular-text" />
-            <button class="upload_image_button button"><?php _e( 'Upload/Add image', 'textdomain' ); ?></button>
-            <p class="description"><?php _e( 'Select an image for this health topic.', 'textdomain' ); ?></p>
-        </td>
-    </tr>
-    <?php
-} );
 
 // Save image meta
 add_action( 'created_health_topic', 'save_health_topic_image_meta' );
